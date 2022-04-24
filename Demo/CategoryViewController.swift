@@ -40,9 +40,19 @@ class CategoryViewController: UIViewController {
             itemScroll.contentSize = CGSize(width: itemScroll.frame.size.width*5, height: itemScroll.frame.size.height)
             for j in 1...27
             {
-                viewItem = UIView(frame: CGRect(x:5, y: 50, width:200, height:50))
+                viewItem = UIView(frame: CGRect(x:CGFloat(itXpos), y: CGFloat(itYpos), width:200, height:50))
                 itemScroll.addSubview(viewItem)
                 viewItem.backgroundColor = UIColor.blue
+                itXpos =  itXpos + Int(viewItem.frame.size.width) + 10
+                if j % 5 == 0
+                {
+                    itYpos =  itYpos + Int(viewItem.frame.self.height) + 5
+                    itXpos = 0
+                }
+                else
+                {
+                    
+                }
             
                 
             }
